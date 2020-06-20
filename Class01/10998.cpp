@@ -1,16 +1,14 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int A, B;
-
-void solve() {
-	cout << A+B;
-}
-
 int main() {
+	int A,B;
+
 	cin >> A >> B;
+
 	if (A<=0 || B>=10) return 1;
-	solve();
+
+	cout << A*B;
 
 	return 0;
 }

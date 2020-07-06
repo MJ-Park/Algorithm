@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <algorithm>
 #define MAX_LEN 1000001
 using namespace std;
 
@@ -10,27 +9,27 @@ int main() {
 	scanf("%s", str);
 
 	for (int i=0; i<MAX_LEN; i++) {
-		if (str[i] == '\0') {
-			
+		if (str[i] == '\0')
 			break;
-		}
 		
-		if (str[i] > 'A' || str[i] < 'Z')
+		if (str[i] >= 'A' && str[i] <= 'Z')
 			countArr[str[i]-'A']++;
+		// else if(str[i] >='a' && str[i] <= 'z')
 		else countArr[str[i]-'a']++;
 	}
-	
+
 	for (int i=0; i<26; i++) {
-		if (maxVal < countArr[i]) {
+		if (maxVal <= countArr[i]) {
 			maxVal = countArr[i];
 			res = i;
 		}
 	}
 	
 	for (int i=0; i<26; i++) {
-		if ( (maxVal == countArr[i]) && (i != res))
+		if ( (maxVal == countArr[i]) && (i != res)) {
 			printf("?");
 			return 0;
+		}
 	}
 	printf("%c", 'A'+res);
 
